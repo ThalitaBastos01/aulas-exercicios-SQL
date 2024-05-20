@@ -4,4 +4,4 @@ select avg(idade) from usuarios; --46.3620000000000000 -- colocamos o avg no lug
 
 select round(avg(idade)) from usuarios; -- 46
 
-select round(avg(idade), 2) from usuarios; -- aquie é quantas casas decimais que quero  acrescentar a mais nessa media. 
+select round(avg(idade), 2) from usuarios; -- 46.36 aquie é quantas casas decimais que quero  acrescentar a mais nessa media. 
