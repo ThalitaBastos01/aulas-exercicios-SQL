@@ -1,0 +1,1 @@
+-- utilizamos a função now  no postgreSQL para obter data e hora atuais.
