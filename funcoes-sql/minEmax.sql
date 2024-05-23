@@ -1,6 +1,6 @@
 select * from usuarios;
 
--- min retorna sempre o menos valor apartir de um campo que informarmos como argumento
+-- min retorna sempre o menor valor apartir de um campo que informarmos como argumento
 -- ele aceita qualquer campo
 select min(cadastro) from usuarios; -- 2023-05-22 03:09:18
 
