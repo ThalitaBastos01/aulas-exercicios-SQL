@@ -7,4 +7,4 @@ where id = 2;
 
 delete 
 from produtos 
-where descricao is null; -- o where é a condição 
+where descricao is null; --  condição 
