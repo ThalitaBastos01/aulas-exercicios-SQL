@@ -16,7 +16,7 @@ create table if not exists produtos (
 
 insert into produtos (nome, descricao, preco, categoria) values ('Caderno', 'Linda Camisa', 5990, 'Roupas');
 insert into produtos (nome, preco, categoria) values ('Caderno', 2000, 'Material escolar');
-insert into produtos (nome, descricao, preco, categoria) values ('Calça Jeans', NULL, 12900, 'Roupas'),('Bermuda', 'Bermuda longa preta', 12900, 'Roupas');
+insert into produtos (nome, descricao, preco, categoria) values ('Calça Jeans', NULL, 12900, 'Roupas'),('Bermuda', 'Bermuda longa preta', 12900, 'Roupas'), ('Jaqueta', 'Jaqueta jeans', 20900, 'Roupas');
 update produtos set nome = 'Caderno de 10 materias' where id = 3;
 update produtos set categoria = 'Calças', preco = 12950 where descricao is null;
 update produtos set nome = 'Caderno'; -- NUNCA FAÇA ISSO (UPDATE SEM WHERE)
