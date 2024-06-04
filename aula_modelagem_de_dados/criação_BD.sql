@@ -9,3 +9,11 @@ create table editoras (
 );
 
 insert into editoras (nome, cnpj) values ('Cubos Academy', '00112233445566');
+
+--tabela livros - Relacionamento um para muitos (1 - n)
+create table livros (
+  isbn integer primary key,
+  editora_id integer references editoras(id),
+  titulo text not null,
+  data_publicacao date not null
+);
