@@ -17,3 +17,15 @@ create table livros (
   titulo text not null,
   data_publicacao date not null
 );
+--inserindo dados na tabela livros
+insert into livros 
+(isbn, editora_id, titulo, data_publicacao)
+values
+(12345, 2, 'Backend com node.js', '2024-12-01'); -- nesse exemplo colocamos um id que não existe na tabela editoras, então da esse erro (inserção ou atualização em tabela "livros" viola restrição de chave estrangeira "livros_editora_id_fkey")
+
+-- modo em que o id existe, ele executa normalmente
+
+insert into livros 
+(isbn, editora_id, titulo, data_publicacao)
+values
+(12345, 1, 'Backend com node.js', '2024-12-01');
