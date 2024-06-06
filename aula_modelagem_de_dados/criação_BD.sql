@@ -29,3 +29,6 @@ insert into livros
 (isbn, editora_id, titulo, data_publicacao)
 values
 (12345, 1, 'Backend com node.js', '2024-12-01');
+
+-- Tabela enderecos - Relacionamento um para um
+
