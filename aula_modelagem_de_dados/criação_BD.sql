@@ -46,3 +46,28 @@ create table enderecos (
 insert into enderecos (editora_id, cep)
 values 
 (1, '41000-000');
+
+--Tabela categorias - Relacionamento muitos para muitos
+
+create table categorias (
+	id serial primary key,
+  nome text not null
+);
+
+create table livro_categoria (
+	livro_isbn integer references livros(isbn),
+  categoria_id integer references categorias(id)
+);
+
+insert into categorias (nome) values ('Tecnologia'), ('Programação'), ('Nodejs');
+
+-- relacionamento entre livro e categoria
+
+insert into livro_categoria 
+(livro_isbn, categoria_id)
+values
+(12344, 1),
+(12345, 2),
+(12345, 3),
+(12344, 2);
+clear
