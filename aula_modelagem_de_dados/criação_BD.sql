@@ -1,5 +1,6 @@
 create database aula_modelagem; --criando o banco
 drop database aula_modelagem; -- excluindo um banco de dados (obs: ele não pode estar selecionado),
+drop table nomedatabela; -- excluir uma tabela.
 -- sempre que for passado o campo eu preciso passar o tipo de dado que ele vai receber
 create table editoras (
 	id serial primary key, 
@@ -71,3 +72,19 @@ values
 (12345, 3),
 (12344, 2);
 
+--Tabela comentarios - Auto relacionamento
+
+create table comentarios (
+	id serial primary key,
+  descricao text not null,
+  comentario_id integer references comentarios(id),
+  livro_isbn integer references livros(isbn)
+);
+
+insert into comentarios (livro_isbn, descricao)
+values
+(12345, 'Livro muito bom');
+
+insert into comentarios (comentario_id, descricao)
+values
+(1, 'Obrigado pelo elogio');
