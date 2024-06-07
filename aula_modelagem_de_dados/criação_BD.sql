@@ -88,3 +88,29 @@ values
 insert into comentarios (comentario_id, descricao)
 values
 (1, 'Obrigado pelo elogio');
+
+
+-- Alteração de tabelas
+
+alter table categorias add column descricao text;
+
+-- não vou querer mais esse campo quero remover 
+
+alter table categorias drop column descricao;
+
+-- quero mudar o tipo 
+
+alter table categorias alter column descricao type varchar(100);
+
+-- criando uma nova tabela
+
+create table telefons (
+	id serial primary key,
+  editora_id integer,
+  numero text
+);
+
+--estou alterando que é a tabela telefons, estou adicionando uma constraints que é foreign key é no campo editora_id, que vai fazer referencia na tabela editoras no campo id 
+alter table telefons 
+add constraint fk_telefones_editoras 
+foreign key (editora_id) references editoras(id); 
