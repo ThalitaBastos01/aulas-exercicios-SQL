@@ -4,14 +4,20 @@ create database ecommerce;
 -- criação das tabelas sem chave estrangeira
 
 
-create table vendedores (cpf char(11) primary key, nome varchar(150));
+create table vendedores (
+  cpf char(11) unique primary key, 
+  nome varchar(150)
+  );
 
 create table clientes (
-  cpf char(11) primary key, 
+  cpf char(11) unique primary key, 
   nome varchar(150)
 );
 
-create table categorias (id serial primary key, nome varchar(50));
+create table categorias (
+  id serial primary key, 
+  nome varchar(50)
+  );
 
 -- demais tabelas 
 
@@ -73,3 +79,19 @@ values
 ('Manga', 'Rico em Vitamina A, potássio e vitamina C', 198, 176, 1),
 ('Uva', 'NÃO CONTÉM GLÚTEN.', 420, 90, 1);
 
+-- Alimentar a tabela clientes com as seguintes informações
+
+insert into clientes (cpf, nome)
+values
+('803.713.500-42', 'José Augusto Silva'),
+('676.428.690-61', 'Antonio Oliveira'),
+('631.933.100-34', 'Ana Rodrigues'),
+('756.705.050-18', 'Maria da Conceição');
+
+--Alimentar a tabela vendedores com as seguintes informações
+
+insert into vendedores (cpf, nome)
+values 
+('825.398.410-31', 'Rodrigo Sampaio'),
+('232.625.460-03', 'Beatriz Souza Santos'),
+('280.071.550-23', 'Carlos Eduardo');
