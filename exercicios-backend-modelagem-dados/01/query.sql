@@ -5,12 +5,12 @@ create database ecommerce;
 
 
 create table vendedores (
-  cpf char(11) unique primary key, 
+  cpf char(14) unique primary key, 
   nome varchar(150)
   );
 
 create table clientes (
-  cpf char(11) unique primary key, 
+  cpf char(14) unique primary key, 
   nome varchar(150)
 );
 
@@ -24,8 +24,8 @@ create table categorias (
 create table pedidos (
   id serial primary key, 
 	valor integer, 
-  cliente_cpf char(11) references clientes(cpf), 
-  vendedor_cpf char(11) not null references vendedores(cpf)
+  cliente_cpf char(14) references clientes(cpf), 
+  vendedor_cpf char(14) not null references vendedores(cpf)
 );
 
 
@@ -95,3 +95,36 @@ values
 ('825.398.410-31', 'Rodrigo Sampaio'),
 ('232.625.460-03', 'Beatriz Souza Santos'),
 ('280.071.550-23', 'Carlos Eduardo');
+
+--a) José Algusto comprou os seguintes itens com o vendedor Carlos Eduardo: 1 Mamão, 1 Pepsi de 2l, 6 Heinekens de 600ml, 1 Escova dental e 5 Maçãs.
+
+insert into pedidos (valor, cliente_cpf, vendedor_cpf)
+values
+(9650, '803.713.500-42', '280.071.550-23');
+
+insert into itens_do_pedido (quantidade, pedidos_id, produto_id)
+values 
+(1, 1, 1),
+(1, 1, 10),
+(6, 1, 11),
+(1, 1, 15),
+(5, 1, 2);
+
+
+-- atualizando o estoque
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 1; 
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 10;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 6
+where id = 11;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 15;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 5
+where id = 2;
+
