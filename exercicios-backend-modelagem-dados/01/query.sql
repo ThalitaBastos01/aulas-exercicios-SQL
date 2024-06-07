@@ -98,10 +98,12 @@ values
 
 --a) José Algusto comprou os seguintes itens com o vendedor Carlos Eduardo: 1 Mamão, 1 Pepsi de 2l, 6 Heinekens de 600ml, 1 Escova dental e 5 Maçãs.
 
+-- inserindo pedido
 insert into pedidos (valor, cliente_cpf, vendedor_cpf)
 values
 (9650, '803.713.500-42', '280.071.550-23');
 
+-- inserindo itens do pedido
 insert into itens_do_pedido (quantidade, pedidos_id, produto_id)
 values 
 (1, 1, 1),
