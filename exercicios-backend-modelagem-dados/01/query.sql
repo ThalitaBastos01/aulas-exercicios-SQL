@@ -130,3 +130,118 @@ where id = 15;
 update produtos set quantidade_em_estoque = quantidade_em_estoque - 5
 where id = 2;
 
+
+--b 
+insert into pedidos (valor, cliente_cpf, vendedor_cpf)
+values
+(6460, '631.933.100-34', '232.625.460-03');
+
+-- inserindo itens do pedido
+insert into itens_do_pedido (quantidade, pedidos_id, produto_id)
+values 
+(10, 7, 17),
+(3, 7, 18),
+(5, 7, 1),
+(10, 7, 5),
+(2, 7, 6);
+
+
+-- atualizando o estoque
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 10
+where id = 17; 
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 3
+where id = 18;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 5
+where id = 1;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 10
+where id = 5;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 2
+where id = 6;
+
+
+-- c
+
+insert into pedidos (valor, cliente_cpf, vendedor_cpf)
+values
+(4120, '756.705.050-18', '232.625.460-03');
+
+insert into itens_do_pedido (quantidade, pedidos_id, produto_id)
+values 
+(1, 8, 13),
+(6, 8, 12),
+(10, 8, 17);
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 13; 
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 6
+where id = 12;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 10
+where id = 17;
+
+--d 
+insert into pedidos (valor, cliente_cpf, vendedor_cpf)
+values
+(9370, '756.705.050-18', '825.398.410-31');
+
+insert into itens_do_pedido (quantidade, pedidos_id, produto_id)
+values 
+(1, 8, 16),
+(6, 8, 18),
+(1, 8, 7),
+(3, 8, 1),
+(20, 8, 5),
+(2, 8, 6);
+
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 16; 
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 6
+where id = 18;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 7;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 3 
+where id = 1;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 20
+where id = 5;
+
+-- e
+
+insert into pedidos (valor, cliente_cpf, vendedor_cpf)
+values
+(8229, '676.428.690-61', '825.398.410-31');
+
+insert into itens_do_pedido (quantidade, pedidos_id, produto_id)
+values 
+(8, 9, 18),
+(1, 9, 8),
+(3, 9, 17),
+(8, 9, 5),
+(2, 9, 11);
+
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 8
+where id = 18; 
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 1
+where id = 8;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 3
+where id = 17;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 8 
+where id = 5;
+
+update produtos set quantidade_em_estoque = quantidade_em_estoque - 2
+where id = 11;
+
