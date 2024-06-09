@@ -7,11 +7,11 @@ const app = express()
 
 app.use(express.json())
 
-app.get('/', async (req, res) => {
-    
+app.get('/:id', async (req, res) => {
+    const { id } = req.params
 
     try {
-        const resultado = await pool.query('select * from empresas')
+        const resultado = await pool.query(`select * from empresas where id = ${id}`)
 
         return res.json(resultado.rows)
 

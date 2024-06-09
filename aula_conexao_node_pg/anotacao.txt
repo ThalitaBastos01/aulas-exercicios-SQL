@@ -1,0 +1,63 @@
+// requisição com pool 
+
+// const express = require('express')
+// const pool = require('./conexao')
+
+
+
+// const app = express()
+
+// app.use(express.json())
+
+// app.get('/:id', async (req, res) => {
+// const { id } = req.params
+
+  //  try {
+    //    const resultado = await pool.query(`select * from empresas where id = ${id}`)
+
+      //  return res.json(resultado.rows)
+
+    // } catch (error) {
+     //   console.log(error.massage);
+    // }
+// })
+
+// app.listen(3000)
+
+// requisição com client
+
+// const express = require('express')
+// const client = require('./conexao')
+
+
+
+// const app = express()
+
+// app.use(express.json())
+
+// app.get('/:id', async (req, res) => {
+   //  const { id } = req.params
+
+    // const { Pool } = require('pg')
+
+    
+    // try {
+
+       // const client = new client({
+            host: 'localhost',
+            port: 5432,
+            user: 'postgres',
+            password: '174029',
+            database: 'aula_conexão_node_pg'
+        // })
+
+        // const resultado = await client.query(`select * from empresas where id = ${id}`)
+
+        // return res.json(resultado.rows)
+
+    // } catch (error) {
+       // console.log(error.massage);
+    // }
+// })
+
+// app.listen(3000)
