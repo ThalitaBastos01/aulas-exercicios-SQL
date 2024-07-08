@@ -70,18 +70,40 @@ const atualizar = async (req, res) => {
             return res.status(400).json('Não foi possivel atualizar o usuario')
         }
 
-        return res.status(200).json(usuario[0])
+        return res.status(200).json('Usuario atualizado com sucesso!')
     } catch (error) {
         return res.status(400).json(error.message);
     }
+}
 
-    
+const excluir = async (req, res) => {
+    const {id} = req.params
+
+    try {
+        const usuarioExiste = await knex('usuarios').where({id}).first();
+
+        if (!usuarioExiste) {
+            return res.status(404).json('Usuario não encontrado');
+        }
+
+        const usuario = await knex('usuarios')
+        .del().where({id});
+
+        if (!usuario) {
+            return res.status(400).json('Não foi possivel excluir o usuario')
+        }
+
+        return res.status(200).json('Usuario excluido com sucesso!')
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
 }
 
 module.exports = {
     listar, 
     obter,
     cadastrar,
-    atualizar
+    atualizar,
+    excluir
 
 }
