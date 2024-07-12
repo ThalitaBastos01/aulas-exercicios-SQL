@@ -7,7 +7,7 @@ CREATE TABLE "agendamentos" (
   agendamento varchar(255)
 );
 
-INSERT INTO agendamentos (id,nome,telefone,agendamento)
+INSERT INTO  (id,nome,telefone,agendamento)
 VALUES
   (1,'Inga Kent','(43) 5321-8481','2019-03-18 10:04:30'),
   (2,'Serena Murray','(99) 6682-0834','2023-06-29 11:49:30'),
